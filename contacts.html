@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULTUNE</title>
+    <link rel="icon" type="image/x-icon" href="tablogo.png">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .modal-content {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 35px;
+            width: 800px;
+            height: auto;
+            animation: popIn 220ms ease-out;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+        .modal-content h4 {
+            position: relative;
+            left: -289px;
+            font-size: 15px;
+        }
+        .modal-content h2 {
+             position: relative;
+             top: -80px;
+             left: -50px;
+            margin-left: 40px;
+        }  
+        .creatorsection {
+            margin-top: 10px;
+        }
+        .creatorText {
+            cursor: pointer;
+            color: #000000;
+            font-size: 18px;
+            width: 0;
+            transition: 0.3s;
+
+        }
+        .creatorText:hover {
+            transform: scale(1.2);
+            color: rgb(22, 224, 96);
+        }
+        .creator-box {
+            display: flex;
+            width: 110%;
+            justify-content: left;
+            gap: 40px;
+            margin-top: 15px;
+        }
+        .creator-box img {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .creator-box h3 {
+            color: white;
+            margin: 50px 0 0;
+            font-size: 18px;
+        }
+        h4 {
+            color: rgb(42, 116, 181);
+            margin: 1px;
+            margin-left: -250px;
+            font-size: 12px;
+        }
+        .creator-box p {
+            color: white;
+            margin: 50px 0 0;
+            font-size: 18px;
+        }
+        button {
+            font-size: 14px;
+            padding: 20px 20px;
+            background: #d4d4d4;
+            color: rgb(0, 0, 0);     
+            font-weight: bold;
+            border: 2px solid #000000;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+            left: 240px;
+            top: -140px;
+        }
+        button:hover {
+            color: #ffffff;
+            background-color: #ff9900b5;
+        }
+        .footer-social {
+            text-align: center;
+            margin-top: -525px;
+            margin-right: 2000px;
+        }
+        p {
+            margin-bottom: 5px;
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fffdfd;
+        }
+        .fb-icon {
+            width: 70px;
+            height: auto;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .fb-icon:hover {
+            transform: scale(1.5);
+        }
+        .insta-icon {
+            position: relative;
+            top: -43px;
+            left: 45px;
+            width: 70px;
+            height: auto;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .insta-icon:hover {
+            transform: scale(1.5);
+        }
+        .tiktok-icon {
+            position: relative;
+            top: -87px;
+            left: 90px;
+            width: 70px;
+            height: auto;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .tiktok-icon:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+    <body>
+
+        <div class="overlay">
+            <div class="wrapper">
+                <header>
+                    <h1>SOULTUNE MUSIC SHOP</h1>
+
+                    <nav>
+                        <ul>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="services.html">REPAIR & MAINTENANCE</a></li>
+                            <li><a href="contacts.html">CONTACTS</a></li>
+                            <li><a href="settings.html"><img style="position: relative; top: 5px;" src="items/settingsicon.png" class="logo" alt="Settings" height="35" width="55"></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+            </div>
+
+            <div class="contacts-left">
+                <div class="item">
+                    <img style="position: relative; right: 200px; top: 230px; margin-top: -80px;" src="items/usericon.png" class="logo" alt="Settings" height="auto" width="260"><h1>SOULTUNE MUSIC</h1>
+                </div>
+
+                <img style="position: relative; top: 270px; left: 130px;" src="items/addressicon.png" alt="addressicon" height="auto" width="120px"><p style="position: relative; left: 245px; top: 214px;">Metro Manila Taguig</p>
+                <img style="position: relative; top: 255px; left: 155px;" src="items/emailicon.png" alt="addressicon" height="auto" width="70px"><p style="position: relative; left: 245px; top: 214px;">soultune@gmail.com</p>
+                
+                <div class="creatorsection">
+                <h2  class="creatorText"onclick="openCreators()">DEVELOPERS</h2>
+
+                    <div id="creatorsModal" class="modal">
+                        <div class="modal-content">
+
+                            <h2 style="margin-bottom: 20px;">PROFILES</h2>
+                            <h4>click photo for socials</h4>
+
+                            <div class="creator-box">
+                                <a href="https://www.facebook.com/Lanz0427/" target="_blank"><img src="items/lanz.png" class="modal-img"></a>
+                                <h3 style="color:white;">Lanz Costanilla</h3>
+                                <p style="margin-bottom: 20px; position: relative; top: 40px; left: -175px;">lrcostanilla@paterostechnologicalcollege.edu.ph</p>
+                            </div>
+
+                            <div class="creator-box">
+                                <a href="https://www.facebook.com/cairojom.pagtakhan.5/" target="_blank"><img src="items/cairo.png" class="modal-img"></a>
+                                <h3 style="color:white;">Cairo Pagtakhan</h3>
+                                <p style="margin-bottom: 20px; position: relative; top: 40px; left: -175px;">cjpagtakhan@paterostechnologicalcollege.edu.ph</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+
+            <div class="contacts-leftlower">   
+                <h2 style="margin-bottom: -70px;">PHONE NUMBER:</h2><p style="position: relative; left: 390px; top: 205px;">09237863391</p>
+                <h2>OPERATING HOURS:</h2><p style="position: relative; left: 430px; top: 215px;">Opening Time - 7am<br>Closing Time - 8pm</p>
+            </div>
+
+            <div class="contacts-right">
+                <h3>Send Message to us!</h3>
+                <form action="home.html" autocomplete="on" class="form-container-left">
+                    <div class="contacts-form">
+                        <label for="Customer">Name</label>
+                        <input type="name" id="users" name="username" placeholder="Name of the Customer" required><br>
+                    </div>
+
+                    <div class="contacts-form">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required><br>
+                    </div>
+
+                    <div class="contacts-form">
+                        <label for="subject">Subject</label>
+                        <input type="subject" id="subject" name="subject" placeholder="Subject" required><br>
+                    </div>
+        
+                    <div class="contacts-form">
+                        <label for="message">Message</label>
+                        <input type="message" id="message" name="message"><br>
+                    </div>
+
+                    <p>
+                        <button type="submit">SUBMIT</button>
+                    </p>
+                </form>
+            </div>
+
+            <div class="footer-social">
+                <p>PAGES</p>
+                <img src="items/fbicon.png" alt="facebook" class="fb-icon">
+                <img src="items/instaicon.png" alt="facebook" class="insta-icon">
+                <img src="items/tiktokicon.png" alt="facebook" class="tiktok-icon">
+            </div>
+            
+        </div>
+
+        <script>
+function openCreators() {
+    document.getElementById("creatorsModal").style.display = "flex";
+}
+
+function closeCreators() {
+    document.getElementById("creatorsModal").style.display = "none";
+}
+
+window.onclick = function(e) {
+    if (e.target == document.getElementById("creatorsModal")) {
+        closeCreators();
+    }
+}
+</script>
+        
+        <script>
+            const current = location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(link => {
+        if(link.getAttribute("href") === current){
+            link.classList.add("active");
+        }
+    });
+
+        </script>
+    </body>
+</html>

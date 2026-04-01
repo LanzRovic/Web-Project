@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - SOULTUNE</title>
+    <link rel="icon" type="image/x-icon" href="D:/lanz/Documents/my codes/project/items/tablogo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('items/new.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+
+            overflow: hidden;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: -120px;
+            min-height: 200vh;
+            padding: 20px;
+        }
+        header {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #000;
+            padding: 0px;
+        }
+        header h1 {
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #f0f0f0;
+            -webkit-text-stroke: 2px #000;
+            font-size: 44px;
+            margin-left: 20px;
+            position: relative;
+            top: 10px;
+        }
+        .logo {
+            width: 420px;
+            height: 220px;
+            margin-top: 140px;
+            margin-bottom: 40px;
+            margin-left: 720px;
+        }
+        .form-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .register-form {
+            align-items: center;
+            text-align: left;
+            width: 15%;
+            position: relative;
+            top: -20px;
+            padding: 1px;
+            margin: -5px;
+            border-radius: 3px;
+        }
+        .register-form label {
+            font-family: "Arial Black", Impact, sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+            -webkit-text-stroke: 0.5px #000000;
+            margin-bottom: 2px;
+            margin-left:-30px;
+        }
+        .register-form input {
+            width: 120%;
+            padding: 15px;
+            margin-bottom: 20px;
+            margin-left: -30px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            border: 1px solid #000000;
+            border-radius: 12px;
+            background: #d4d4d4;
+            color: rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-left: 220px;
+        }
+        button:hover {
+            color: #ffffff;
+            background-color: #ff9900a8;
+        }
+        .p {
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #f0f0f0;
+            -webkit-text-stroke: 0.5px #000;
+            font-size: 14px;
+            margin-bottom: 5px;
+            position: relative;
+            right: 140px;
+            bottom: 35px;
+
+        }
+        .radio-buttons {
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #f0f0f0;
+            stroke-width: 100px #000;
+            font-size: 11px;
+            margin-bottom: 0px;
+            position: relative;
+            right: 110px;
+            bottom: 35px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SOULTUNE MUSIC SHOP</h1>
+</header>
+
+<div class="overlay">
+    <img src="items/logonobg.png" class="logo" alt="Soultune-logo" height="200" width="80">
+
+    <form onsubmit="validatePasswords(event)" action="login.html" autocomplete="on" class="form-container">
+        <div class="register-form">
+            <label for="name">Name:</label>
+            <input type="name" required oninvalid="this.setCustomValidity('Please enter your name')"
+       oninput="this.setCustomValidity('')" id="name" name="name" placeholder="Enter your name" reqiured>
+        </div>
+
+        <div class="register-form">
+            <label for="email">Email:</label>
+            <input type="email" required oninvalid="this.setCustomValidity('Please enter a valid email address')"
+       oninput="this.setCustomValidity('')" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="register-form">
+            <label for="password">Password:</label>
+            <input type="password" required oninvalid="this.setCustomValidity('Please enter your password!')"
+       oninput="this.setCustomValidity('')" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="register-form">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+        </div>
+
+
+        <div class="register-form">
+            <label for="birthday">Date of Birth:</label>
+            <input type="date" id="birthday" placeholder="Enter your Birthday" required>
+        </div>
+        
+        <div class="p">
+        <p>Gender</p>
+        </div>
+        
+        <div class="radio-buttons">
+            <input type="radio" id="male" name="Gender" value="MALE" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="Gender" value="FEMALE" required>
+            <label for="female">Female</label>
+        </div>
+        
+        <div class="register-form">
+        <p>
+            <button type="submit">Register</button>
+        </p>
+        </div>
+            
+    </form>
+
+        <script>
+            function validatePasswords(event) {
+                const password = document.getElementById("password").value;
+                const confirmPassword = document.getElementById("confirm-password").value;
+
+                if (password !== confirmPassword) {
+                    event.preventDefault();  // stop form from submitting
+                    alert("Passwords do not match!");
+                    return false;
+                }
+
+                return true;
+            }
+    </script>
+</div>
+</body>
+</html>

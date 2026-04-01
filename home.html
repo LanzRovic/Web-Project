@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULTUNE</title>
+    <link rel="icon" type="image/x-icon" href="tablogo.png">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .homepage {
+            text-align: center;
+            margin-top: 220px;
+        }
+        .homepage h2 {
+            position: relative;
+            top: -10px;
+            font-size: 60px;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px black;
+        }
+        .homepage h3 {
+            position: relative;
+            top: 10px;
+            font-size: 40px;
+            color: #cb921f;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgb(25, 25, 25);
+        }
+        .homepage p {
+            position: relative;
+            top: 15px;
+            color: white;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .homepage button {
+            position: relative;
+            top: 30px;
+            font-size: 18px;
+            padding: 25px 15px;
+            background: #ff9900;
+            color: rgb(0, 0, 0);     
+            transition: background-color 1.5s;
+            border: 2px solid #000000;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10;
+        }
+        .homepage button:hover {
+            color: #030303;
+            background-color: #ffffffa3;
+            transform: scale(1.1);
+        }
+        .homecard {
+            margin-top: 100px;
+            margin-left: 63px;
+            height: 450px;
+            width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 45px;
+            text-align: left;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .homecard:hover {
+            transform: scale(1.05);
+        }
+        .homecard img {
+            position: relative;
+            left: 20px;
+            height: 80%;
+            width: 92%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .homecard2 {
+            margin-top: 100px;
+            margin-left: 63px;
+            height: 450px;
+            width: 550px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 45px;
+            text-align: left;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .homecard2:hover {
+            transform: scale(1.05);
+        }
+        .homecard2 img {
+            position: relative;
+            left: 20px;
+            height: 70%;
+            width: 92%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .homecard2 .img1 {
+            animation: fade1 20s infinite;
+        }
+        .homecard2 .img2 {
+            position: relative;
+            top: -290px;
+            animation: fade2 20s infinite;
+
+        }
+       @keyframes fade1 {
+            0%   { opacity: 1; }
+            40%  { opacity: 1; }   
+            50%  { opacity: 0; }   
+            90%  { opacity: 0; }
+            100% { opacity: 1; }   
+        }
+        @keyframes fade2 {
+            0%   { opacity: 0; }
+            40%  { opacity: 0; }
+            50%  { opacity: 1; }   
+            90%  { opacity: 1; }
+            100% { opacity: 0; }   
+        }
+        .homecard2 h4 {
+            margin-left: 100px;
+            color: #f0f0f0;
+            margin-top: -285px;
+            font-size: 25px;
+        }
+        .homecard3 {
+            margin-top: 100px;
+            margin-left: 63px;
+            height: 450px;
+            width: 550px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 45px;
+            text-align: left;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .homecard3:hover {
+            transform: scale(1.05);
+        }
+        .homecard3 img {
+            position: relative;
+            left: 20px;
+            height: 80%;
+            width: 92%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .homecard3 .img1 {
+            animation: fade1 20s infinite;
+        }
+        .homecard3 .img2 {
+            position: relative;
+            top: -333px;
+            animation: fade2 20s infinite;  
+        }
+        .homecard3 h4 {
+            margin-left: 100px;
+            color: #f0f0f0;
+            margin-top: -285px;
+            font-size: 25px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .modal-content {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 35px;
+            height: 700px;
+            width: 1150px;
+            animation: zoomIn 0.3s ease;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .modal-img {
+            width: 1050px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .modal-content h4 {
+            color: white;
+            font-size: 24px;
+            margin: 10px 0 5px;
+
+            position: relative;
+            top: -20px;
+            left: 5px;
+        }
+        .modal2 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #modal2-title {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-size: 15px;
+        }
+        .modal2-content {
+            display: flex;           
+            justify-content: space-between; 
+            align-items: center;     
+            gap: 20px;               
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 35px;
+            height: 700px;
+            width: 1870px;
+            animation: zoomIn 0.3s ease;
+            text-align: center;
+            backdrop-filter: blur(10px);
+
+            position: relative;
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .modal2-img1 {
+            position: absolute;
+            top: 20px;   
+            left: 500px;  
+            width: 100px; 
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .modal2-img2 {
+            position: absolute;
+            top: 20px;   
+            left: 50px;  
+            width: 100px; 
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        @media screen and (max-width: 1200px) {
+            .modal2-img1, .modal2-img2 {
+                width: 100%;      
+                margin-bottom: 10px;
+            }
+            .modal2-content {
+                flex-direction: column;
+            }
+        }
+        .modal2-content h4 {
+            position: absolute;
+            top: 10px;
+            left: 95vh;
+            transform: scale(2.5);
+            color: white;
+        }
+        .homepage-list {
+            display: flex;
+            position: relative;
+            left: 17px;
+            justify-content: left;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+    <body>
+
+        <div class="overlay">
+            <div class="wrapper">
+                <header>
+                    <h1>SOULTUNE MUSIC SHOP</h1>
+                </header>
+
+            </div>
+
+                <section class="homepage" id="home">
+                    <h2>Where your music journey begins</h2>
+                    <h3>Your sound. Your style</h3>
+                    <p>Instruments for beginners, pros and everyone in between</p>
+                    <a href="guitarproducts.html"><button>Shop Now</button></a>
+                
+
+                        <div class="homepage-list">
+                            <div class="homecard" onclick="openModal(
+                                'homepage/soultuneshop.png',null)">
+                                
+                                    <img src="homepage/soultuneshop.png">
+                            </div>
+
+                            <div class="homecard2" onclick="openModal2(
+                                'homepage/repair.png', 'homepage/maintenance.png',
+                                'REPAIR & MAINTENANCE')">
+
+                                    <img src="homepage/repair.png" class="img img1">
+                                    <img src="homepage/maintenance.png" class="img img2">
+                                    <h4>REPAIR & MAINTENANCE</h4>
+                            </div>
+
+                            <div class="homecard3" onclick="openModal2(
+                                'homepage/lanz.png', 'homepage/cairo.png',null)">
+
+                                    <img src="homepage/lanz.png" class="img img1">
+                                    <img src="homepage/cairo.png" class="img img2">
+                            </div>
+                            
+                        </div>
+
+        </div>
+
+                    <div id="modal" class="modal" onclick="closeModal()">
+                        <div class="modal-content" onclick="event.stopPropagation()">
+                            <img id="modal-img" class="modal-img">
+                        </div>
+                    </div>
+
+                    <div id="modal2" class="modal2" onclick="closeModal2()">
+                        <div class="modal2-content" onclick="event.stopPropagation()">
+                            <img id="modal2-img1" class="modal2-img modal-img1">
+                            <img id="modal2-img2" class="modal2-img modal-img2">
+                            <h4 id="modal2-title"></h4>
+                        </div>
+                    </div>
+                </section>
+
+        <script>
+                let currentItem = {};
+
+function openModal(img) {
+    currentItem = { img };
+
+    document.getElementById("modal-img").src = img;
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function openModal2(img1, img2, title) {
+
+    currentItem = { img1, img2 , title };
+    document.getElementById("modal2-img1").src = img1;
+    document.getElementById("modal2-img2").src = img2;
+    document.getElementById("modal2-title").innerText = title;
+    document.getElementById("modal2").style.display = "flex";
+}
+
+function closeModal2() {
+    document.getElementById("modal2").style.display = "none";
+}
+        </script>
+    </body>
+</html>

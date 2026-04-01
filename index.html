@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOULTUNE</title>
+    <link rel="icon" type="image/x-icon" href="items/tablogo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('items/new.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            min-width: 100%;
+            min-height: 100%;
+            overflow:auto;
+            overflow-x: auto;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .wrapper {
+            align-items: center;
+            width: 1530px;
+            margin: 100px;  
+        }
+        .title {
+            font-family: "Arial Black", Impact, sans-serif;
+            font-size: 100px;
+            color: #f7f7f7;
+            -webkit-text-stroke: 3px #000000;
+            text-align: center;
+            margin-top: 200px;
+            margin-left: 100px;
+        }
+        .intro-bounce {
+        font-family: "Arial Black", Impact, sans-serif;
+        font-size: 100px;
+        color: #f7f7f7;
+        -webkit-text-stroke: 3px #000000;
+        text-align: center;
+        margin-top: 200px;
+        margin-left: 100px;
+        animation: bounceIn 2s ease forwards;
+        }
+        @keyframes bounceIn {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        60% {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        80% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1);
+        }
+        }
+        button {
+        margin-left: 350px;
+        padding: 24px 33px;
+        font-size: 30px;
+        border: 1px solid rgb(15, 15, 15);
+        border-radius: 30px;
+        background: #d4d4d4;
+        color: rgb(0, 0, 0);    
+        font-weight: bold;
+        margin-top: 80px;
+        cursor: pointer;
+        transition: 0.5s;
+        display: inline-block;
+        animation: bounceIn 1s ease forwards;
+        }
+        button:hover {
+            color: #ffffff;
+            background-color: #ff9900;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+    <div class="wrapper">
+        <div class="container">
+                <h1 class="intro-bounce">WELCOME TO SOULTUNE <br>MUSIC SHOP</h1>
+                <a href="login.html"><button>Get Started</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

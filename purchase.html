@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Section</title>
+    <link rel="icon" type="image/x-icon" href="tablogo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('items/new.png') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            
+            display: flex;
+            flex-direction: column;
+            min-width: 100%;
+            min-height: 100%;
+            overflow: hidden;
+            overflow-y: auto;
+
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
+            padding: 0px;
+        }
+        .wrapper {
+            align-items: auto;
+            width: 1100px;
+            margin: 0px auto;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #000;
+            padding: 0px;
+        }
+        header, .wrapper {
+            min-width: 1920px;
+        }
+        header h1 {
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #f0f0f0;
+            -webkit-text-stroke: 2px #000;
+            font-size: 44px;
+            margin-left: 20px;
+            position: relative;
+            top: 10px;
+        }
+        ul {
+            margin: 0px;
+            position: relative;
+            left: 5px;
+            top: 5px;
+        }
+        li {
+            display: inline;
+            margin: 20px;
+            font-size: 25px;
+        }
+        a {
+            text-decoration: none;
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #fafafa;
+            -webkit-text-stroke: 1.3px #000;
+        }
+        .low-menu {
+            position: fixed;
+            top: 40px;
+            left: 1760px;
+            width: 100%;
+            z-index: 1000;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        .item {
+            color: #ffffff;
+            background: #222;
+            position: relative;
+            top: 90px;
+            padding: 15px;
+            padding-right: 201px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .item img {
+            width: 120px;
+            border-radius: 10px;
+        }
+        .buttons {
+            margin-top: 100px;
+            display: flex;
+            gap: 25px;
+        }
+
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #remove-btn {
+            background: #dc3545;
+            color: white;
+        }
+
+        #purchase-btn {
+            background: #28a745;
+            color: white;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: lightgreen;
+            font-weight: bold;
+            display: none;
+        }
+
+        .empty {
+            font-size: 18px;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+       <div class="overlay">
+            <div class="wrapper">
+                <header>
+                    <h1>SOULTUNE MUSIC SHOP</h1>
+                </header>
+
+                    <nav class="low-menu">
+                        <ul>
+                            <li><a href="guitarproducts.html"><img style="position: relative; bottom: 15px; left: 20px;" src="items/homeicon.png" class="logo" alt="Settings" height="auto" width="100"></a></li>
+                        </ul>
+                    </nav>
+
+<h2>Your Cart</h2>
+<div id="cart-items"></div>
+
+<div class="buttons">
+    <button id="remove-btn" onclick="removeSelected()">Remove Selected Items</button>
+    <button id="purchase-btn" onclick="purchaseAll()">Purchase All</button>
+</div>
+
+<h3 id="total-price" style="color: white; margin-top: 10px;">Total: ₱0</h3>
+
+<p id="message"></p>
+            </div>
+        </div>
+<script>
+let container = document.getElementById("cart-items");
+let message = document.getElementById("message");
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+function displayCart() {
+    container.innerHTML = "";
+
+    if (cart.length === 0) {
+        container.innerHTML = "<p class='empty'>Your cart is empty.</p>";
+        document.getElementById("total-price").innerText = "Total: ₱0";
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        container.innerHTML += `
+            <div class="item">
+                <input type="checkbox" class="select-item" data-index="${index}">
+                <img src="${item.img}">
+                <div>
+                    <h2>${item.title}</h2>
+                    <p>${item.price}</p>
+                </div>
+            </div>
+        `;
+    });
+
+    updateTotal(); 
+}
+
+displayCart();
+
+
+function removeSelected() {
+    let checkboxes = document.querySelectorAll(".select-item");
+
+
+    cart = cart.filter((item, index) => {
+        return !checkboxes[index].checked;
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    message.innerHTML = "Selected items removed!";
+    message.style.display = "block";
+
+    setTimeout(() => message.style.display = "none", 2000);
+
+    displayCart();
+    updateTotal();
+}
+
+
+function purchaseAll() {
+    if (cart.length === 0) {
+        message.innerHTML = "Your cart is empty!";
+        message.style.display = "block";
+        setTimeout(() => message.style.display = "none", 2000);
+        return;
+    }
+
+    localStorage.removeItem("cart");
+    cart = [];
+
+    displayCart();
+    document.getElementById("total-price").innerText = "Total: ₱0"; // reset total
+
+    message.innerHTML = "Purchase successful! Thank you!";
+    message.style.display = "block";
+
+    setTimeout(() => message.style.display = "none", 3000);
+}
+
+function updateTotal() {
+    let total = 0;
+
+    cart.forEach(item => {
+
+        let priceNum = parseFloat(item.price.replace("₱", "").replace(/,/g, ""));
+        total += priceNum;
+    });
+
+    document.getElementById("total-price").innerText = "Total: ₱" + total.toLocaleString();
+}
+
+</script>
+
+</body>
+</html>

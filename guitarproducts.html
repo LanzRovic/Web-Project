@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULTUNE</title>
+    <link rel="icon" type="image/x-icon" href="tablogo.png">
+    <link rel="stylesheet" href="main.css">
+</head>
+    <body>
+
+        <div class="overlay">
+            <div class="wrapper">
+                <header>
+                    <h1>SOULTUNE MUSIC SHOP</h1>
+
+                    <nav>
+                        <ul>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="services.html">REPAIR & MAINTENANCE</a></li>
+                            <li><a href="contacts.html">CONTACTS</a></li>
+                            <li><a href="settings.html"><img style="position: relative; top: 5px;" src="items/settingsicon.png" class="logo" alt="Settings" height="35" width="55"></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <button class="nav-toggle" onclick="toggleMenu()">MENU</button>
+
+                    <nav class="low-menu" id="lowMenu">
+                        <ul>
+                            <li><a href="guitarproducts.html">GUITAR</a></li>
+                            <li><a href="pianoproducts.html">PIANO</a></li>
+                            <li><a href="drumsproducts.html">DRUMSET</a></li>
+                            <li><a href="accessories.html">ACCESSORIES</a></li>
+                            <li><a href="home.html"><img src="items/homeicon.png" class="logo" alt="Settings" height="auto" width="60"></a></li>
+                        </ul>
+                    </nav>
+
+            </div>
+
+    <section class="guitar" id="guitar">        
+        <h3>GUITAR</h3>
+
+            <div class="guitar-list1">
+                    <div class="card" onclick="openModal(
+                        'productsguitar/Fender Standard Stratocaster.png',
+                        'Fender Standard Stratocaster',
+                        '₱40,945.00',
+                        'A timeless classic with its ergonomically contoured double-cutaway body, versatile triple pickup configuration and inventive spring-loaded tremolo bridge'
+                        )">
+                        
+                            <img src="productsguitar/Fender Standard Stratocaster.png">
+                            <h4>Standard Stratocaster</h4>
+                            <p>₱40,945.00</p>
+                    </div>
+
+                    <div class="card" onclick="openModal(
+                        'productsguitar/Epiphone Les Paul.png',
+                        'Epiphone Les Paul Standard',
+                        '₱42,950.00',
+                        'Affordable, rock-focused electric guitar with a classic design, featuring a mahogany body, maple cap, and mahogany neck'
+                        )">
+                        
+                            <img src="productsguitar/Epiphone Les Paul.png">
+                            <h4>Les Paul Standard</h4>
+                            <p>₱42,950.00</p>
+                    </div>
+
+                    <div class="card" onclick="openModal(
+                        'productsguitar/Taylor 114ce.png',
+                        'Taylor 114ce Acoustic Guitar',
+                        '₱47,940.00',
+                        'Exceptional playability, rich tone and all the features a player needs for everyday musical applications'
+                        )">
+                        
+                            <img src="productsguitar/Taylor 114ce.png">
+                            <h4>Taylor Acoustic Guitar</h4>
+                            <p>₱47,940.00</p>
+                    </div>
+
+                    <div class="card" onclick="openModal(
+                        'productsguitar/Fender Squier Affinity Series Telecaster.png',
+                        'Fender Squier Affinity Series Telecaster',
+                        '₱9,000.00',
+                        'Designed for reliable performance and unmistakable look for any level of musician'
+                        )">
+                        
+                            <img src="productsguitar/Fender Squier Affinity Series Telecaster.png">
+                            <h4>Fender Squier</h4>
+                            <p>₱9,000.00</p>
+                    </div>
+
+                    <div class="card" onclick="openModal(
+                        'productsguitar/Jackson X Series.png',
+                        'Jackson X Series Soloist SLAT8 Multi-Scale',
+                        '₱74,000.00',
+                        'Shred in ergonomic comfort and style, high-performance evolution of the electric guitar, this 8-string multi-scale model unlocks the possibilities of an instrument by accommodating two scale lengths on one fingerboard'
+                        )">
+                        
+                            <img src="productsguitar/Jackson X Series.png">
+                            <h4>Jackson X Series</h4>
+                            <p>₱74,000.00</p>
+                    </div>
+
+                    <div class="card" onclick="openModal(
+                        'productsguitar/Player II Telecaster.png',
+                        'Player II Telecaster',
+                        '₱65,499.00',
+                        'A stage-ready guitar with contemporary updates to power your performance and inspire your playing'
+                        )">
+                        
+                            <img src="productsguitar/Player II Telecaster.png">
+                            <h4>Telecaster</h4>
+                            <p>₱65,499.00</p>
+                    </div>
+
+                    <div class="card" onclick="openModal(
+                        'productsguitar/Yamaha C-45 Nylon Classical Guitar.png',
+                        'Yamaha C-45 Nylon Classical Guitar',
+                        '₱8,500.00',
+                        'A full-size, beginner-friendly nylon-string classical guitar known for its good value and playability'
+                        )">
+                        
+                            <img src="productsguitar/Yamaha C-45 Nylon Classical Guitar.png">
+                            <h4>Nylon Classical Guitar</h4>
+                            <p>₱8,500.00</p>
+                    </div>
+            </div>
+
+            <div class="guitar-list2">
+                        <div class="card" onclick="openModal(
+                            'productsguitar/Yamaha F-310 Dreadnought Accoustic.png',
+                            'Yamaha F-310 Dreadnought Accoustic',
+                            '₱10,950.00',
+                            'Offers outstanding quality at a truly budget price, handling comfort of the slightly reduced body depth and intermediate scale length will be particularly appreciated by younger players')">
+                            
+                                <img src="productsguitar/Yamaha F-310 Dreadnought Accoustic.png">
+                                <h4>Dreadnought Accoustic</h4>
+                                <p>₱10,950.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/Yamaha Pacifica 112V YN Electric guitar.png',
+                            'Yamaha Pacifica 112V YN Electric Guitar',
+                            '₱22,200.00',
+                            'Highly-regarded, versatile electric guitar known for its quality construction and excellent value, suitable for beginners and intermediate players')">
+                            
+                                <img src="productsguitar/Yamaha Pacifica 112V YN Electric guitar.png">
+                                <h4>Yamaha Electric Guitar</h4>
+                                <p>₱22,200.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/Yamaha SLG200 Steel silent guitar.png',
+                            'Yamaha SLG200 Steel Silent Guitar',
+                            '₱52,155.00',
+                            'The steel-string SILENT Guitar SLG200S has always been an ideal instrument for practice, travel, and performing')">
+                            
+                                <img src="productsguitar/Yamaha SLG200 Steel silent guitar.png">
+                                <h4>Yamaha Steel Guitar</h4>
+                                <p>₱52,155.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/Stratocaster American Professional II Fender.png',
+                            'Stratocaster American Professional II Fender',
+                            '₱84,107.00',
+                            'The American Pro II Stratocaster delivers instant familiarity and sonic versatility you will feel and hear right away, with broad ranging improvements that add up to nothing less than a new standard for professional instruments')">
+                            
+                                <img src="productsguitar/Stratocaster American Professional II Fender.png">
+                                <h4>Fender Stratocaster</h4>
+                                <p>₱84,107.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/RG series Ibañez RGR52ET.png',
+                            'RG Series Ibañez RGR52ET',
+                            '₱65,990.00',
+                            'Axe Design Lab Electric Guitar 3pc Maple neck, Nyatoh body, Macassar Ebony fretboard, White Step off-set dot inlay, Jumbo Stainless Steel frets')">
+                            
+                                <img src="productsguitar/RG series Ibañez RGR52ET.png">
+                                <h4>RG Series Ibañez</h4>
+                                <p>₱65,990.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/Vintage Coaster Series V69 Gibson.png',
+                            'Vintage Coaster Series V69 Gibson',
+                            '₱18,990.00',
+                            'Fully equipped and contains everything required for aspiring guitar players of all ages to enjoy playing all musical styles, from jazz to blues, pop to rock and metal')">
+                            
+                                <img src="productsguitar/Vintage Coaster Series V69 Gibson.png">
+                                <h4>SG Standard Gibson</h4>
+                                <p>₱18,990.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/PRS SE Custom 24 Electric Guitar.png',
+                            'PRS SE Custom 24 Electric Guitar',
+                            '₱75,000.00',
+                            'Solidbody electric guitar puts the sound, playability, and gorgeous looks of the Custom line')">
+                            
+                                <img src="productsguitar/PRS SE Custom 24 Electric Guitar.png">
+                                <h4>PRS Electric Guitar</h4>
+                                <p>₱75,000.00</p>
+                        </div>
+
+            </div>
+
+            <div class="guitar-list3">
+                        <div class="card" onclick="openModal(
+                            'productsguitar/ES-335 gibson.png',
+                            'ES-335 Gibson',
+                            '₱206,441.00',
+                            'Semi-hollow maple/poplar/maple body with maple center block')">
+                            
+                                <img src="productsguitar/ES-335 gibson.png">
+                                <h4>ES-335 Gibson</h4>
+                                <p>₱206,441.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/Limited Edition Classic Vibe™ 60s Custom Telecaster® SH with Bigsby.png',
+                            'Limited Edition Classic Vibe™ 60s Custom Telecaster® SH with Bigsby',
+                            '₱32,000.00',
+                            'Double-bound body Tele® models of the late ‘50s and ‘60s, this Classic Vibe™ Custom Telecaster creates incredible tone courtesy of its Fender Designed™ alnico single-coil bridge and humbucking neck pickups')">
+                            
+                                <img src="productsguitar/Limited Edition Classic Vibe™ 60s Custom Telecaster® SH with Bigsby.png">
+                                <h4>Classic Custom Telecaster®</h4>
+                                <p>₱32,000.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/D-28 Martin.png',
+                            'D-28 Martin',
+                            '₱194,641.00',
+                            'The D-28 pairs spruce and rosewood for bold Dreadnought tone with rich overtones and legendary balance. With vintage-style bracing and refined playability, The most iconic Martin—trusted by artists across generations')">
+                            
+                                <img src="productsguitar/D-28 Martin.png">
+                                <h4>D-28 Martin</h4>
+                                <p>₱194,641.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/J-45 Studio Walnut.png',
+                            'Gibson J-45 Studio Walnut',
+                            '₱141,541.00',
+                            'Solid walnut back and sides and a solid Sitka spruce top, this updated J-45 Studio features a traditional body depth for warm, rich tone')">
+                            
+                                <img src="productsguitar/J-45 Studio Walnut.png">
+                                <h4>Gibson Walnut</h4>
+                                <p>₱141,541.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/FSX830C Yamaha Accoustic.png',
+                            'FSX830C Yamaha Accoustic',
+                            '₱38,881.00',
+                            'Solid spruce top and rosewood back/sides, the FSX830C has a cutaway body and an electric system')">
+                            
+                                <img src="productsguitar/FSX830C Yamaha Accoustic.png">
+                                <h4>FSX830C Yamaha Accoustic</h4>
+                                <p>₱38,881.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/Big baby taylor.png',
+                            'Big baby taylor',
+                            '₱29,441.00',
+                            'Crafted alongside its smaller siblings in the Baby Series, the Big Baby Taylor offers a multi-purpose musical tool that blends the sound and feel of a full-size guitar with a more compact experience that adds up to supreme playing comfort')">
+                            
+                                <img src="productsguitar/Big baby taylor.png">
+                                <h4>Big baby taylor</h4>
+                                <p>₱29,441.00</p>
+                        </div>
+
+                        <div class="card" onclick="openModal(
+                            'productsguitar/SC-10E Spruce Road Series Martin.png',
+                            'SC-10E Spruce Road Series Martin',
+                            '₱64,841.00',
+                            'Built road-ready and made to perform equally well on stage or in the studio, Road Series guitars offer something for everyone, from innovative SC body shapes designed for ultimate playability to new Retro Plus Mahogany models featuring torrefied tops for a vintage-inspired tone')">
+                            
+                                <img src="productsguitar/SC-10E Spruce Road Series Martin.png">
+                                <h4>SC-10E Spruce Road Series Martin</h4>
+                                <p>₱64,841.00</p>
+                        </div>
+
+            </div>
+
+            <div id="modal" class="modal" onclick="closeModal()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <img id="modal-img" class="modal-img">
+                    <h4 id="modal-title"></h4>
+                    <p id="modal-price"></p>
+                    <p id="modal-desc"></p>
+
+                    <div class="modal-buttons">
+                        <button class="add-cart" onclick="addToCart()">Add to Cart</button>
+                        <button class="buy-now" onclick="buyNow()">Buy Now</button>
+                    </div>
+
+                    <p id="cart-message" style="color: lightgreen; font-weight: bold; display: none; margin-top: 10px;">Added to cart!</p>
+                </div>
+            </div>
+    </section>
+
+        <script>
+let currentItem = {};
+
+function openModal(img, title, price, desc) {
+    currentItem = { img, title, price };
+
+    document.getElementById("modal-img").src = img;
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-price").innerText = price;
+    document.getElementById("modal-desc").innerText = desc;
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function addToCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(currentItem);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    document.getElementById("cart-message").style.display = "block";
+
+    setTimeout(() => {
+        document.getElementById("cart-message").style.display = "none";
+    }, 2000);
+}
+
+function buyNow() {
+    addToCart();
+    window.location.href = "purchase.html"; 
+}
+
+const current = location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(link => {
+        if(link.getAttribute("href") === current){
+            link.classList.add("active");
+        }
+    });
+
+    function toggleMenu() {
+    let menu = document.getElementById("lowMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+function toggleMenu() {
+    let menu = document.getElementById("lowMenu");
+
+    if (menu.classList.contains("show")) {
+      
+        menu.classList.remove("show");
+        setTimeout(() => {
+            menu.style.display = "none";
+        }, 200);
+    } else {
+      
+        menu.style.display = "flex";
+        setTimeout(() => {
+            menu.classList.add("show");
+        }, 10);
+    }
+}
+</script>
+    </body>
+</html>

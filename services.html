@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULTUNE</title>
+    <link rel="icon" type="image/x-icon" href="tablogo.png">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+        button {
+            font-size: 14px;
+            padding: 15px 10px;
+            background: #d4d4d4;
+            color: rgb(0, 0, 0);     
+            font-weight: bold;
+            border: 2px solid #000000;
+            transition: color 0.5s;
+            border-radius: 12px;
+            cursor: pointer;
+
+            position: relative;
+            left: 360px;
+            top: 100px;
+        }
+        button:hover {
+            color: #ffffff;
+            background-color: #ff9900a8;
+        }
+
+    </style>
+</head>
+    <body>
+        <div class="overlay">
+            <div class="wrapper">
+                <header>
+                    <h1>SOULTUNE MUSIC SHOP</h1>
+
+                    <nav>
+                        <ul>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="services.html">REPAIR & MAINTENANCE</a></li>
+                            <li><a href="contacts.html">CONTACTS</a></li>
+                            <li><a href="settings.html"><img style="position: relative; top: 5px;" src="items/settingsicon.png" class="logo" alt="Settings" height="35" width="55"></a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <button class="nav-toggle" onclick="toggleMenu()">MENU</button>
+                    <nav class="low-menu" id="lowMenu">
+                        <ul>
+                            <li><a href="guitarproducts.html">GUITAR</a></li>
+                            <li><a href="pianoproducts.html">PIANO</a></li>
+                            <li><a href="drumsproducts.html">DRUMSET</a></li>
+                            <li><a href="accessories.html">ACCESSORIES</a></li>
+                            <li><a href="home.html"><img style="position: relative; top: 5px;" src="items/homeicon.png" class="logo" alt="Settings" height="auto" width="60"></a></li>
+                        </ul>
+                    </nav>
+
+            </div>
+
+            <h2>Need your instrument fixed? Fill out the form below and our technician will contact you!</h2>
+
+                <form action="home.html" autocomplete="on" class="form-container-left">
+                    <div class="fillup-form">
+                        <label for="Customer">Customer Name</label>
+                        <input type="username" id="users" name="username" placeholder="Name of the Customer" required><br>
+                    </div>
+
+                    <div class="fillup-form">
+                        <label for="name">Product Name</label>
+                        <input type="name" id="product-name" name="product" required><br>
+                    </div>
+
+                    <div class="fillup-form">
+                        <label for="model">Model Number</label>
+                        <input type="model" id="model" name="model" placeholder="Model number" required><br>
+                    </div>
+        
+                    <div class="fillup-form">
+                        <label for="problem">Problem Description</label>
+                        <input type="problem" id="problem" name="problem"><br>
+                    </div>
+
+                <div class="form-container-right">
+                    <div class="fillup-form a">
+                        <label for="text">Contact Number</label>
+                        <input id="numOnly" type="text" placeholder="Phone number" required><br>
+                    </div>
+
+                    <div class="fillup-form a">
+                        <label for="schedule">Preffered Schedule</label>
+                        <input type="datetime-local" id="schedule" name="schedule" required><br>
+            
+                        <p>
+                            <button type="submit">SUBMIT REQUEST</button>
+                        </p>
+                    </div>
+                </div>
+                </form>
+
+            <script>
+            document.getElementById("numOnly").addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, "");
+                });
+
+                const current = location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(link => {
+        if(link.getAttribute("href") === current){
+            link.classList.add("active");
+        }
+    });
+
+    function toggleMenu() {
+    let menu = document.getElementById("lowMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+function toggleMenu() {
+    let menu = document.getElementById("lowMenu");
+
+    if (menu.classList.contains("show")) {
+       
+        menu.classList.remove("show");
+        setTimeout(() => {
+            menu.style.display = "none";
+        }, 200);
+    } else {
+       
+        menu.style.display = "flex";
+        setTimeout(() => {
+            menu.classList.add("show");
+        }, 10);
+    }
+}
+            </script>
+
+        </div>
+    </body>
+</html>

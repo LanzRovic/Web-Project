@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULTUNE</title>
+    <link rel="icon" type="image/x-icon" href="tablogo.png">
+    <link rel="stylesheet" href="main.css">
+</head>
+    <body>
+
+    <div class="overlay">
+        <div class="wrapper">
+            <header>
+                <h1>SOULTUNE MUSIC SHOP</h1>
+
+                <nav>
+                    <ul>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">REPAIR & MAINTENANCE</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="settings.html"><img style="position: relative; top: 5px;" src="items/settingsicon.png" class="logo" alt="Settings" height="35" width="55"></a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <button class="nav-toggle" onclick="toggleMenu()">MENU</button>
+
+                <nav class="low-menu" id="lowMenu">
+                    <ul>
+                        <li><a href="guitarproducts.html">GUITAR</a></li>
+                        <li><a href="pianoproducts.html">PIANO</a></li>
+                        <li><a href="drumsproducts.html">DRUMSET</a></li>
+                        <li><a href="accessories.html">ACCESSORIES</a></li>
+                        <li><a href="home.html"><img src="items/homeicon.png" class="logo" alt="Settings" height="auto" width="60"></a></li>
+                    </ul>
+                </nav>
+
+        </div>
+
+    
+        <section class="upperhero" id="about">
+            <h2>ABOUT US</h2>
+        </section>
+
+        <div class="upperbox">
+            <h3>Soultune Music Shop is dedicated in providing your favorite and high quality brands and accessories that inspire creativity and help musicians express their passion for music</h3>
+            <video controls width="1500" class="myvideo">
+                <source src="items/VID ABOUT.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    <div class="purposecontainer">
+        <section class="lowerhero" id="about">
+            <h2>PURPOSE OF THIS WEBSITE</h2>
+        </section>
+
+        <div class="lowerbox">
+            <h3>Promote Local and International Music Brands</h3>
+            <p>Different brands under the spotlight and assist in marketing the tool makers both locally and globally</p>
+            <h3>Educate Customers About Music Products</h3>
+            <p>Will provide users with extensive product descriptions, specifications to make their choice of the right instrument easier depending on their skill level and preferences</p>
+            <h3>Connect With Musicians</h3>
+            <p>Community hub where musicians are able to communicate with each other, share their experiences like express their emotions into music, and keep track of the latest products and music events</p>
+        </div>
+    </div>
+
+        <footer>
+            <div class="footer-row">
+                <p>© 2025 SOULTUNE GUITAR SHOP</p>
+                <p>LET THE MUSIC MOVE YOU</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const current = location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(link => {
+        if(link.getAttribute("href") === current){
+            link.classList.add("active");
+        }
+    });
+
+    function toggleMenu() {
+    let menu = document.getElementById("lowMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+function toggleMenu() {
+    let menu = document.getElementById("lowMenu");
+
+    if (menu.classList.contains("show")) {
+        
+        menu.classList.remove("show");
+        setTimeout(() => {
+            menu.style.display = "none";
+        }, 200);
+    } else {
+       
+        menu.style.display = "flex";
+        setTimeout(() => {
+            menu.classList.add("show");
+        }, 10);
+    }
+}
+    </script>
+
+    </body>
+</html>

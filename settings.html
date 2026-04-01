@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULTUNE</title>
+    <link rel="icon" type="image/x-icon" href="tablogo.png">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+        nav a.active {
+            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff !important;
+            border: 2px solid #fff;
+            text-shadow: none;
+        }
+        .form-container-left {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            bottom: 350px;
+            right: 600px;
+        }
+        .fillup-form {
+            align-items: center;
+            text-align: left;
+            width: 20%;
+            padding: 10px;
+            margin: 1px 750px;
+            border-radius: 3px;
+        }
+        .fillup-form label {
+            font-family: "Arial Black", Impact, sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+            -webkit-text-stroke: 1px #000000;
+            margin-bottom: 2px;
+            text-align: 2000px;
+        }
+        .fillup-form input {
+            width: 140%;
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+        .p {
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #f0f0f0;
+            -webkit-text-stroke: 1px #000;
+            font-size: 24px;
+            margin-bottom: 5px;
+            position: relative;
+            right: 135px;
+            bottom: 25px;
+        }
+        .birthdate {
+            align-items: center;
+            text-align: left;
+            width: 20%;
+            padding: 10px;
+            margin: 1px 750px;
+            border-radius: 3px;
+        }
+        .birthdate input {
+            width: 65%;
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+        .radio-buttons {
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #f0f0f0;
+            stroke-width: 100px #000;
+            font-size: 21px;
+            margin-bottom: 0px;
+            position: relative;
+            right: -25px;
+            top: -60px;
+
+        }
+        .form-container-right {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            top: -635px;
+            left: 950px;
+        }
+        .p2 {
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #f0f0f0;
+            -webkit-text-stroke: 1px #000;
+            font-size: 44px;
+            margin-bottom: 5px;
+            position: relative;
+            right: -35px;
+            bottom: -5px;
+        }
+        .p3 {
+            font-family: 'Arial Black', Impact, sans-serif;
+            color: #f0f0f0;
+            -webkit-text-stroke: 1px #000;
+            font-size: 25px;
+            margin-bottom: 3px;
+            position: relative;
+            right: 40px;
+            bottom: -1px;
+        }
+        .checkbox-buttons {
+            transform: scale(1.9);
+            margin: 6px;
+            position: relative;
+            right: 150px;
+            top: -85px;
+
+        }
+        .fillup-form a{
+            align-items: center;
+            text-align: left;
+            width: 25%;
+            padding: 15px;
+            margin: 0px 750px;
+            border-radius: 3px;
+        }
+        .fillup-form label a{
+            font-family: "Arial Black", Impact, sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+            -webkit-text-stroke: 1px #000000;
+            margin-bottom: 2px;
+            text-align: 2000px;
+        }
+        .fillup-form input a{
+            width: 140%;
+            margin-bottom: 20px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+        button {
+            font-size: 18px;
+            padding: 25px 25px;
+            background: #d4d4d4;
+            color: rgb(0, 0, 0);     
+            font-weight: bold;
+            border: 2px solid #000000;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+            left: 220px;
+            top: -70px;
+        }
+        button:hover {
+            color: #ffffff;
+            background-color: #ff9900b7;
+        }
+        .purchase {
+            margin-left: -18%;
+            position: relative;
+            top: -410px;
+            left: 1270px;
+        }
+        .purchase button {
+            padding: 15px;
+            border-radius: 20px;
+        }
+        .logout {
+            margin-left: 30px;
+            position: relative;
+            top: -460px;
+            left: 1270px;
+        }
+        .logout button {
+            padding: 15px;
+            border-radius: 20px;
+            background: #d4d4d4;
+            color: rgb(0, 0, 0);
+        }
+        .logout button:hover {
+            color: #ffffff;
+            background-color: #c42e10a8;
+        }
+    </style>
+</head>
+    <body>
+
+    <div class="overlay">
+        <div class="wrapper">
+            <header>
+                <h1>SOULTUNE MUSIC SHOP</h1>
+
+                <nav>
+                    <ul>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">REPAIR & MAINTENANCE</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="settings.html"><img src="items/settingsicon.png" class="logo" alt="Settings" height="35" width="55"></a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <button class="nav-toggle" onclick="toggleMenu()">MENU</button>
+                <nav class="low-menu" id="lowMenu">
+                    <ul>
+                        <li><a href="guitarproducts.html">GUITAR</a></li>
+                        <li><a href="pianoproducts.html">PIANO</a></li>
+                        <li><a href="drumsproducts.html">DRUMSET</a></li>
+                        <li><a href="accessories.html">ACCESSORIES</a></li>
+                        <li><a href="home.html"><img src="items/homeicon.png" class="logo" alt="Settings" height="auto" width="60"></a></li>
+                    </ul>
+                </nav>
+
+        </div>
+
+    <div class="itemsettings">
+        <img style="position: relative; right: 200px; top: 230px; margin-top: -80px;" src="items/usericon.png" class="logo" alt="Settings" height="120" width="260"><h2>ACCOUNT SETTINGS</h2>
+    </div>
+
+            <form action="login.html" autocomplete="on" class="form-container-left">
+                <div class="fillup-form">
+                    <label for="Customer">Name</label>
+                    <input type="username" id="users" name="username" placeholder="Name of the Customer" required><br>
+                </div>
+
+                <div class="fillup-form">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required><br>
+                </div>
+
+                <div class="fillup-form">
+                    <label for="password">Password:</label>
+                    <input type="password" required oninvalid="this.setCustomValidity('Please enter your password')"
+                    oninput="this.setCustomValidity('')" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+    
+                <div class="birthdate">
+                    <label for="birthday"></label>
+                    <input type="date" id="birthday" placeholder="Enter your Birthday" required><br>
+                </div>
+
+                <div class="p">
+                    <p>Gender</p>
+                </div>
+        
+                <div class="radio-buttons">
+                    <input type="radio" id="male" name="Gender" value="MALE" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="Gender" value="FEMALE" required>
+                    <label for="female">Female</label>
+                </div>
+
+            <div class="form-container-right">
+
+                <div class="fillup-form a">
+                    <label for="text">Phone Number</label>
+                    <input id="numOnly" type="text" placeholder="Phone number" required><br>
+                </div>
+
+                <div class="fillup-form a">
+                        <label for="Address">Address</label>
+                        <input type="address" id="address" name="address" placeholder="Enter Address" required><br>
+                </div>
+
+                <div class="p2">    
+                    <p2>Payment Method</p2>
+                </div>
+
+                <div class="p3">
+                    <p3>DEBIT / CARD</p3><br>
+                    <p3>GCASH</p3><br>
+                    <p3>PAYMAYA</p3><br>
+                </div>
+
+                <div class="checkbox-buttons">
+                    <input type="checkbox" id="creditcard" name="payment" value="CREDIT CARD"><br>
+                    <input type="checkbox" id="gcash" name="payment" value="GCASH"><br>
+                    <input type="checkbox" id="paymaya" name="payment" value="PAYMAYA"><br>
+                </div>    
+
+                <p>
+                    <button type="submit">SAVE CHANGES</button>    
+                </p>
+
+            </div>
+            </form>
+
+            <div class="purchase">
+                <button onclick="location.href='purchase.html'">PURCHASES</button>
+            </div>
+
+            <div class="logout">
+                <button onclick="location.href='login.html'">LOGOUT</button>
+            </div>
+
+            <script>
+                document.getElementById("numOnly").addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, "");
+                });
+
+                const current = location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(link => {
+        if(link.getAttribute("href") === current){
+            link.classList.add("active");
+        }
+    });
+
+    function toggleMenu() {
+    let menu = document.getElementById("lowMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+function toggleMenu() {
+    let menu = document.getElementById("lowMenu");
+
+    if (menu.classList.contains("show")) {
+       
+        menu.classList.remove("show");
+        setTimeout(() => {
+            menu.style.display = "none";
+        }, 200);
+    } else {
+       
+        menu.style.display = "flex";
+        setTimeout(() => {
+            menu.classList.add("show");
+        }, 10);
+    }
+}
+            </script>
+
+    </div>
+
+    </body>
+</html>
